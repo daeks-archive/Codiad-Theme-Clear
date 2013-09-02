@@ -11,16 +11,14 @@
     left: 0;
     right: 0px;
     height: 35px;
-    background-color: #303030;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.898) inset;
-    border-top: 2px solid #141414;
+    background-color: white;
 }
 
 .project-list-title h2 {
     float: left;
     font-size: 15px;
     font-weight: 500;
-    color: #666;
+    color: #FFA138;
     display: block;
     margin: 10px;    
 }
@@ -28,7 +26,7 @@
 .project-list-title .icon {
     display: block;
     font-size: 15px;
-    color: #666;
+    color: #FFA138;
     z-index: 99999;
     cursor: pointer;
     margin: 5px;
@@ -55,8 +53,12 @@
 }
 
 .sb-projects-content li:hover {
-    background-color: #333;
+    background-color: white;
     cursor: pointer;
+}
+
+.sb-projects-content li {
+    background-color: #FAF8EA;
 }
 
 .sb-projects-content ul {
@@ -72,6 +74,7 @@
 }
 
 .sb-projects-content ul li .icon {
+    color: #FFA138;
     font-size: 12px;
 }
 

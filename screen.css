@@ -175,15 +175,16 @@ input[type="checkbox"] {
 
 button {
     display: inline-block;
+    float: left;
     width: auto;
-    margin: 10px 0 5px 0;
+    margin: 10px 0 20px 0;
     padding: 6px 15px 5px 15px;
     color: black;
     font-size: 13px;
     font-weight: bold;
     background-color: white;
     border-radius: 2px;
-    border: 1px solid #D6D2BE;
+    border: 2px solid #D6D2BE;
 }
 
 button:hover {
@@ -525,6 +526,7 @@ table [class^="icon-"], [class*=" icon-"] {
 .sidebar-handle {
     width: 12px;
     height: 100%;
+    font-size: 14px;
     z-index: 99999;
     margin: 0;
     padding: 0;
@@ -549,24 +551,6 @@ table [class^="icon-"], [class*=" icon-"] {
     right: 0;
     cursor: col-resize;
 }
-
-#sb-right .sidebar-handle span {
-    width: 18px;
-    height: 30px;
-    margin-left: -18px;
-    background: #474747;
-    border-radius: 5px 0px 0px 5px;
-    box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, .7);
-    border-left: 2px solid #707070;
-    color: #c2c2c2;
-}
-
-#sb-right .sidebar-handle span a {
-    font-size: 22px;
-    padding-top: 5px;
-}
-
-#sb-right .sidebar-handle span a:hover { background-color: transparent; }
 
 .sb-left-content {
     position: absolute;
@@ -618,13 +602,12 @@ table [class^="icon-"], [class*=" icon-"] {
     left: 12px;
     right: 0;
     height: 33px;
-    background-color: #303030;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.898) inset;
+    background-color: white;
 }
 #sb-right-title .icon {
     display: block;
     font-size: 15px;
-    color: #666;
+    color: #FFA138;
     z-index: 99999;
     cursor: pointer;
     margin: 10px;
@@ -664,7 +647,7 @@ table [class^="icon-"], [class*=" icon-"] {
 #finder-options-menu li.chosen a{
     color: #D6654C;
 }
-#sb-left-title .icon:hover , #sb-left-title .icon.active{
+#sb-left-title .icon:hover , #sb-right-title span:hover, #sb-left-title .icon.active{
     color: #FFA138;
 }
 /* Right Sidebar */
@@ -686,6 +669,7 @@ table [class^="icon-"], [class*=" icon-"] {
     min-width: 100%;
     cursor: pointer;
     padding: 5px;
+    font-size: 16px;
     border-radius: 3px;
 }
 

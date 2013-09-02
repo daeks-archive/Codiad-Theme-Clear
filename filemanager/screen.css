@@ -1,10 +1,9 @@
-/* FILE MANAGER */
 #file-manager {
     width: 100%;
-    float: left;
     height: 100%;
+    float: left;
     margin: 0;
-    padding: 8px;
+    padding: 15px;
     overflow: auto;
 }
 #file-manager ul {
@@ -23,8 +22,8 @@
     white-space: nowrap;
 }
 #file-manager a {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    min-width: 100%;
     cursor: pointer;
     padding: 5px;
     /*border: 2px solid #EAE6D1;*/
@@ -46,8 +45,53 @@
     background-color: 1px solid white;
     /*border: 2px solid #EC715A;*/
 }
-
+#file-manager span {
+    width:10px;
+    height:10px;
+    display: inline-block;
+    margin-left:-6px;
+    padding-top: 0;
+    line-height: 6px;
+}
+#file-manager .plus:before {
+    display: block;
+    content: "\25b8";
+    padding: 5px;
+    margin-left: -10px;
+    font-size: 16px;
+}
+#file-manager .plus {
+    color: gray;
+    font-family: entypo;
+    font-style: normal;
+    display: inline-block;
+}
+#file-manager .none {
+    background: none;
+}
+#file-manager .minus:before {
+    display: block;
+    content: "\25be";
+    padding: 5px;
+    margin-left: -10px;
+    font-size: 16px;
+}
+#file-manager .minus {
+    color: gray;
+    font-family: entypo;
+    font-style: normal;
+    display: inline-block;
+}
+#file-manager .plus:hover {
+    cursor: pointer;
+    color: #fff;
+}
+#file-manager .minus:hover {
+    cursor: pointer;
+    color: #fff;
+}
 /* CONTEXT MENU */
+
 #context-menu {
     display: none;
     top: 0;
@@ -60,7 +104,7 @@
     background-clip: content-box;
     border: 3px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .9);
-    border-radius: 5px;
+    border-radius: 3px;
 }
 #context-menu a {
     display: block;
@@ -88,7 +132,7 @@
 #filemanager-search-results {
     display: none;
     height: 250px;
-    overflow: auto !important;
+    overflow: scroll !important;
     border: 1px solid #262626;
 }
 #filemanager-search-results div {
@@ -110,10 +154,10 @@
     width: 32px;
     height: 32px;
     float: right;
-    background: url(../../images/loading.gif) no-repeat;
+    background: url(../loading.gif) no-repeat;
 }
-
 /* UPLOADER */
+
 #upload-drop-zone {
     height: 200px;
     padding-top: 60px;
@@ -173,13 +217,21 @@
 }
 
 
+/* SEARCH */
+
+.file-search-table tr td {
+    border: none;
+    padding: 0;
+}
+
 
 /* ICONS */
+
 #file-manager a {
     background-repeat: no-repeat;
     background-position: 4px 4px;
     text-indent: 22px;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 #file-manager .directory {
     background-image: url(images/directory.png);
@@ -283,7 +335,7 @@
     background-image: url(images/code.png);
 }
 #file-manager .ext-log {
-    background-image: url(images/txt.png);
+    background-image: url(images/text-plain.png);
 }
 #file-manager .ext-m4p {
     background-image: url(images/music.png);
@@ -359,9 +411,6 @@
 }
 #file-manager .ext-txt {
     background-image: url(images/file.png);
-}
-#file-manager .ext-ts {
-    background-image: url(images/typescript.png);
 }
 #file-manager .ext-vb {
     background-image: url(images/code.png);

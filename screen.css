@@ -1,22 +1,3 @@
-.modal-head {
-    width: 106px;
-    display: block;
-    position: absolute;
-    top: 4px;
-    right: -2px;
-    background-color: #F1EEDC;
-    color: white;
-    text-align: right;
-    padding: 5px;
-    margin: 0px;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    border-radius: 0px 2px 0px 20px;
-    height: 28px;
-}
-
 /* WEBKIT SCROLLBARS */
 
 ::-webkit-scrollbar {
@@ -62,6 +43,17 @@ html, body {
     color: #000;
     font: normal 13px 'Ubuntu', sans-serif;
     overflow: hidden;
+}
+
+div {
+    scrollbar-base-color:#F1EEDC;
+    scrollbar-3d-light-color:#F1EEDC;
+    scrollbar-arrow-color:#303030;
+    scrollbar-darkshadow-color:#303030;
+    scrollbar-face-color:#F1EEDC;
+    scrollbar-highlight-color:#303030;
+    scrollbar-shadow-color:#303030;
+    scrollbar-track-color:#303030;
 }
 
 /* GLOBALS */
@@ -112,7 +104,7 @@ a:hover,a:active {
 
 /* Useful size modifiers for icons. */
 .bigger-icon {
-    font-size: 170%;
+    font-size: 95%;
     margin-right: 6px;
 }
 
@@ -140,7 +132,7 @@ a:hover,a:active {
 label {
     display: block;
     padding: 0 0 5px 0;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: normal;
 }
 
@@ -177,22 +169,21 @@ input:focus, textarea:focus, select:focus {
 
 input[type="checkbox"] {
     width: 20px;
-  position: relative;
+    position: relative;
     margin: 5px 0 0 0; padding: 0;
 }
 
 button {
     display: inline-block;
-    float: left;
     width: auto;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 5px 0;
     padding: 6px 15px 5px 15px;
     color: black;
     font-size: 13px;
     font-weight: bold;
     background-color: white;
     border-radius: 2px;
-    border: 2px solid #D6D2BE;
+    border: 1px solid #D6D2BE;
 }
 
 button:hover {
@@ -258,12 +249,13 @@ table [class^="icon-"], [class*=" icon-"] {
 /* INSTALLER */
 
 #installer {
-    position: fixed;
+    position: absolute;
     width: 450px;
     top: 15%;
     left: 50%;
     margin-left: -175px;
     padding: 35px;
+    overflow:auto;
 }
 
 #installer h1 {
@@ -276,6 +268,21 @@ table [class^="icon-"], [class*=" icon-"] {
     border: none;
     border-top: 1px solid #ccc;
     margin: 20px 0;
+}
+
+.install_issues {
+    background: #404040;
+    padding: 10px;
+    margin: 10px 0 5px 0;
+    border-radius: 5px;
+    font-family: monospace;
+    box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, .5);
+    overflow: auto;
+}
+
+.install_issues p {
+    padding:0;
+    margin:0;
 }
 
 /* MESSAGES */
@@ -384,7 +391,7 @@ table [class^="icon-"], [class*=" icon-"] {
     position: absolute;
     z-index: 9999;
     background-color: #F1EEDC;
-    border: 3px solid #FFA1386;
+    border: 3px solid #FFA138;
     display: none;
     border-radius: 2px;
 }
@@ -403,6 +410,10 @@ table [class^="icon-"], [class*=" icon-"] {
 }
 .options-menu li:hover a {
     color: #FFA138;
+}
+.options-menu td {
+    padding:0;
+    margin: 0;
 }
 .splitter {
     background-color: black;
@@ -513,7 +524,6 @@ table [class^="icon-"], [class*=" icon-"] {
 
 .sidebar-handle {
     width: 12px;
-    font-size: 14px;
     height: 100%;
     z-index: 99999;
     margin: 0;
@@ -540,12 +550,38 @@ table [class^="icon-"], [class*=" icon-"] {
     cursor: col-resize;
 }
 
+#sb-right .sidebar-handle span {
+    width: 18px;
+    height: 30px;
+    margin-left: -18px;
+    background: #474747;
+    border-radius: 5px 0px 0px 5px;
+    box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, .7);
+    border-left: 2px solid #707070;
+    color: #c2c2c2;
+}
+
+#sb-right .sidebar-handle span a {
+    font-size: 22px;
+    padding-top: 5px;
+}
+
+#sb-right .sidebar-handle span a:hover { background-color: transparent; }
+
 .sb-left-content {
     position: absolute;
     top: 33px;
     left: 0;
     right: 10px;
-    bottom: 0;
+    bottom: 276px;
+}
+
+.sb-left-projects {
+    position:absolute;
+    height:276px;
+    bottom:0;
+    left:0;
+    right:10px;
 }
 
 /*#lock-left-sidebar {
@@ -569,11 +605,30 @@ table [class^="icon-"], [class*=" icon-"] {
 }
 #sb-left-title h2 {
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
     color: #FFA138;
     display: block;
     margin: 10px;
+}
+#sb-right-title{
+    position: absolute;
+    z-index: 9998;
+    top: 0;
+    left: 12px;
+    right: 0;
+    height: 33px;
+    background-color: #303030;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.898) inset;
+}
+#sb-right-title .icon {
+    display: block;
+    font-size: 15px;
+    color: #666;
+    z-index: 99999;
+    cursor: pointer;
+    margin: 10px;
+    float: left;
 }
 #finder-label{
     cursor: pointer;
@@ -622,7 +677,8 @@ table [class^="icon-"], [class*=" icon-"] {
     float: left;
     height: 100%;
     padding: 15px;
-    overflow: scroll;
+    padding-top: 40px;
+    overflow: auto;
 }
 
 #sb-right a {
@@ -630,7 +686,6 @@ table [class^="icon-"], [class*=" icon-"] {
     min-width: 100%;
     cursor: pointer;
     padding: 5px;
-    font-size: 18px;
     border-radius: 3px;
 }
 
@@ -640,6 +695,10 @@ table [class^="icon-"], [class*=" icon-"] {
 
 #sb-right a:hover {
     background-color: white;
+}
+
+#lock-right-sidebar:hover {
+    color: #fff;
 }
 
 #sb-right hr {
@@ -690,13 +749,26 @@ table [class^="icon-"], [class*=" icon-"] {
     color: #fff;
 }
 
+#modal #close-handle {
+    float: right;
+    font-size: 20px;
+    margin: -4px 0 0 0;
+    padding: 5px;
+    cursor: pointer;
+    color: #999;
+}
+
+#modal #close-handle:hover {
+    color: #fff;
+}
+
 #modal-content {
     padding: 20px;
 }
 
 #modal-loading {
     height: 100px;
-    background: url(../images/loading.gif) no-repeat center;
+    background: url(loading.gif) no-repeat center;
 }
 
     /* Download iFrame */

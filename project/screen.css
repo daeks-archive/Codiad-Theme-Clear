@@ -20,6 +20,7 @@
     right: 0px;
     height: 35px;
     background-color: white;
+    overflow: hidden;
 }
 
 .project-list-title h2 {
